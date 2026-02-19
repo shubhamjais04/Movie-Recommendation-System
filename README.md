@@ -66,6 +66,17 @@ movie-recommendation-system/
 └── README.md
 ```
 
+## Note on Data Files
+
+The dataset files (`movies.csv`, `ratings.csv`) are not included in this repository due to GitHub's file size limits. 
+
+**To run this project locally:**
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/parasharmanas/movie-recommendation-system)
+2. Place the CSV files in the `data/` folder
+3. Run the notebook - it will generate the model files automatically
+
+All code, visualizations, and results are available in the notebook for review.
+
 ## Sample Results
 
 **Input:** "Toy Story (1995)"
@@ -174,3 +185,4 @@ Email: shubhjais.in@gmail.com
 
 
 *A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
+
