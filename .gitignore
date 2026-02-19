@@ -1,0 +1,13 @@
+# Large data files
+data/ratings.csv
+data/*.csv
+
+# Model files (can be regenerated)
+models/*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
