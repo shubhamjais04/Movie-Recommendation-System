@@ -4,7 +4,7 @@ A content-based movie recommendation system that suggests similar movies based o
 
 ## Overview
 
-This system recommends movies by analyzing genre similarity and rating patterns. Input a movie you like, and it returns 10 similar 
+This system recommends movies by analyzing genre similarity and rating patterns. Input a movie you like, and it returns 10 similar recommendations.
 
 **Example:**
 - Input: "Toy Story (1995)"
@@ -185,6 +185,7 @@ Email: shubhjais.in@gmail.com
 
 
 *A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
+
 
 
 
