@@ -1,6 +1,6 @@
 # Movie Recommendation System
 
-A content-based movie recommendation system that suggests similar movies based on genre matching and user ratings.
+A content-based movie recommendation system that suggests similar movies based on genre matching and 
 
 ## Overview
 
@@ -185,4 +185,5 @@ Email: shubhjais.in@gmail.com
 
 
 *A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
+
 
