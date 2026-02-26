@@ -8,7 +8,7 @@ This system recommends movies by analyzing genre similarity and rating patterns.
 
 **Example:**
 - Input: "Toy Story (1995)"
-- Output: Other animated family movies with 
+- Output: Other animated family movies with similar genres
 
 ## Dataset
 
@@ -185,6 +185,7 @@ Email: shubhjais.in@gmail.com
 
 
 *A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
+
 
 
 
