@@ -13,7 +13,7 @@ This system recommends movies by analyzing genre similarity and rating patterns.
 ## Dataset
 
 **Source:** MovieLens dataset  
-**Content:** 
+**Content** 
 - ~9,700 movies with titles and genres
 - ~100,000 user ratings from 610 users
 - Rating scale: 0.5 to 5.0 stars
@@ -185,6 +185,7 @@ Email: shubhjais.in@gmail.com
 
 
 *A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
+
 
 
 
