@@ -1,191 +1,127 @@
-# Movie Recommendation System
+# 🎬 Movie Recommendation System
 
-A content-based movie recommendation system that suggests similar movies based on genre matching and user ratings.
+A content-based movie recommendation system that suggests similar movies based on genre matching and user ratings — built on 100,000+ real ratings across 9,700+ movies from the MovieLens dataset.
 
-## Overview
+---
 
-This system recommends movies by analyzing genre similarity and rating patterns. Input a movie you like, and it returns 10 similar recommendations.
+## 📌 Project Overview
 
-**Example:**
-- Input: "Toy Story (1995)"
-- Output: Other animated family movies with similar genres
+Ever wondered how Netflix or Spotify knows what you want next? This project builds a recommendation engine from scratch using content-based filtering — analyzing genre patterns, user rating behavior, and multi-criteria scoring to deliver personalized movie suggestions.
 
-## Dataset
+---
 
-**Source:** MovieLens dataset  
-**Content:** 
-- ~9,700 movies with titles and genres
-- ~100,000 user ratings from 610 users
-- Rating scale: 0.5 to 5.0 stars
+## 💡 How It Works
 
-**Files:**
-- `movies.csv` - Movie titles and genre information
-- `ratings.csv` - User ratings and timestamps
+1. **Genre Extraction** — Genres parsed and vectorized from the input movie
+2. **Similarity Search** — Searches 100+ rating movies for genre matches
+3. **Similarity Scoring** — Cosine Similarity ranks movies by genre overlap
+4. **Multi-criteria Sorting** — Results ranked by similarity + average rating
+5. **Top 10 Output** — Returns the 10 most relevant recommendations
 
-## How It Works
+---
 
-The recommendation system uses **content-based filtering** through genre analysis:
+## ✨ Features
 
-1. Extracts genres from the input movie
-2. Searches popular movies (100+ ratings) for genre matches
-3. Calculates similarity score based on shared genres
-4. Ranks by genre overlap and average rating
-5. Returns top 10 recommendations
+- 🎯 Content-based filtering through genre analysis
+- ⭐ Minimum rating threshold filtering (100+ ratings for quality)
+- 📊 Multi-criteria ranking — similarity score + average rating
+- 🔀 Genre overlap and average rating combined scoring
+- 💾 Model persistence for reusability without retraining
 
-## Technical Implementation
+---
 
-**Data Processing:**
-- Filtered movies with minimum 100 ratings for quality recommendations
-- Parsed pipe-separated genre strings
-- Merged movie metadata with rating statistics
+## 📊 Dataset
 
-**Algorithm:**
-- Genre-based similarity matching
-- Set intersection for finding common genres
-- Multi-criteria sorting (genre matches + average rating)
-- Efficient implementation without large matrix operations
+- **Source:** MovieLens (GroupLens Research)
+- **Movies:** ~9,700 titles with genres
+- **Ratings:** 100,000+ ratings from 610 users
+- **Rating Scale:** 0.5 to 5.0 stars
+- **Files:** `movies.csv` (titles + genres), `ratings.csv` (user ratings)
 
-**Libraries Used:**
-- pandas - data manipulation
-- numpy - numerical operations
-- matplotlib - visualizations
-- pickle - model serialization
+---
 
-## Project Structure
-```
-movie-recommendation-system/
-│
-├── movie_recommender.ipynb       # Main analysis notebook
-├── data/
-│   ├── movies.csv                # Movie metadata
-│   └── ratings.csv               # User ratings
-├── models/
-│   ├── popular_movies.pkl        # Processed movie data
-│   └── recommend_function.pkl    # Recommendation function
-├── images/                        # Saved visualizations
-└── README.md
-```
-
-## Note on Data Files
-
-The dataset files (`movies.csv`, `ratings.csv`) are not included in this repository due to GitHub's file size limits. 
-
-**To run this project locally:**
-1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/parasharmanas/movie-recommendation-system)
-2. Place the CSV files in the `data/` folder
-3. Run the notebook - it will generate the model files automatically
-
-All code, visualizations, and results are available in the notebook for review.
-
-## Sample Results
+## 🏆 Sample Results
 
 **Input:** "Toy Story (1995)"
 
-**Recommendations:**
-1. Toy Story 2 (1999)
-2. The Incredibles (2004)
-3. Monsters, Inc. (2001)
-4. Finding Nemo (2003)
-5. Shrek (2001)
-6. A Bug's Life (1998)
-7. The Lion King (1994)
-8. Aladdin (1992)
-9. Antz (1998)
-10. Wallace & Gromit: The Wrong Trousers (1993)
+| Recommendation | Year |
+|----------------|------|
+| Toy Story 2 | 1999 |
+| The Incredibles | 2004 |
+| Monsters, Inc. | 2001 |
+| Finding Nemo | 2003 |
+| Shrek | 2001 |
 
-*All recommendations share similar genres: Animation, Adventure, Comedy, Children, Fantasy*
+---
 
-## Features
+## 🛠️ Tech Stack
 
-- Fast execution time
-- Genre-based content filtering
-- Considers movie popularity (minimum rating threshold)
-- Balances genre similarity with quality (average ratings)
-- Saved models for reusability
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
-## Key Findings
+---
 
-**From EDA:**
-- Most ratings are between 3-4 stars
-- Popular movies like "Forrest Gump" and "Shawshank Redemption" have 300+ ratings
-- Highest-rated movies tend to be critically acclaimed classics
+## 📁 Project Structure
 
-**Recommendation Performance:**
-- Works best with popular movies
-- Effectively groups movies by genre
-- Provides diverse recommendations within genre constraints
-
-## How to Run
-
-1. **Install dependencies:**
-```bash
-pip install pandas numpy matplotlib seaborn
+```
+Movie-Recommendation-System/
+├── movie_recommender.ipynb        # Main recommendation notebook
+├── data/
+│   ├── movies.csv                 # Movie titles and genres
+│   └── ratings.csv                # User ratings data
+├── models/                        # Saved model files
+├── .gitignore                     # Excludes large CSV files
+└── README.md                      # Project documentation
 ```
 
-2. **Run the notebook:**
+> ⚠️ Note: `movies.csv` and `ratings.csv` are not included due to GitHub file size limits. Download from [MovieLens](https://grouplens.org/datasets/movielens/) and place in the `data/` folder.
+
+---
+
+## 🚀 How to Run
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/shubhamjais04/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
+```
+
+**2. Install dependencies**
+```bash
+pip install pandas numpy scikit-learn matplotlib jupyter
+```
+
+**3. Download the dataset**
+
+Download from [MovieLens](https://grouplens.org/datasets/movielens/) and place `movies.csv` and `ratings.csv` inside the `data/` folder.
+
+**4. Open and run the notebook**
 ```bash
 jupyter notebook movie_recommender.ipynb
 ```
 
-3. **Use the recommender:**
+**5. Use the recommender**
 ```python
-recommend_by_genre('Movie Title (Year)', top_n=10)
+recommendations = recommend_by_genre("Toy Story (1995)", top_n=10)
 ```
-
-## Example Usage
-```python
-# Get recommendations
-recommendations = recommend_by_genre('Toy Story (1995)', top_n=10)
-print(recommendations)
-```
-
-## What I Learned
-
-**Technical Skills:**
-- Building recommendation systems
-- Content-based filtering algorithms
-- Genre parsing and text processing
-- Working with real-world user rating data
-- Model persistence with pickle
-
-**Key Takeaways:**
-- Simple approaches can be effective
-- Genre-based filtering is intuitive and explainable
-- Data preprocessing is crucial for recommendation quality
-- Balancing multiple factors (similarity + quality) improves results
-
-## Future Improvements
-
-- Add cast and director similarity
-- Implement collaborative filtering
-- Hybrid recommendation (content + collaborative)
-- User preference learning
-- Web interface for easy interaction
-
-## Technologies
-
-- **Language:** Python 3
-- **Data:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Persistence:** Pickle
-
-## Dataset Source
-
-MovieLens dataset provided by GroupLens Research
 
 ---
 
-**Shubham Jaiswal**
-
-GitHub: [@shubhamjais04](https://github.com/shubhamjais04)  
-LinkedIn: [linkedin.com/in/shubhamjaiswal2004](https://linkedin.com/in/shubhamjaiswal2004)  
-Email: shubhjais.in@gmail.com
+## 👨‍💻 Author
+ 
+**Shubham Jaiswal**  
+*ML engineer | Building systems that understand taste — one recommendation at a time*
 
 ---
 
+## 📬 Connect
 
-*A practical implementation of recommendation systems demonstrating content-based filtering techniques.*
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shubhjais04)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shubhamjais04)
 
 
 
